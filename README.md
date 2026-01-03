@@ -176,7 +176,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 💬 Support
 
-Found a bug or have a feature request? [Open an issue]https://github.com/mayhsundar/article-summarizer-extension/issues)
+Found a bug or have a feature request? [Open an issue](https://github.com/mayhsundar/article-summarizer-extension/issues)
 
 ---
 
