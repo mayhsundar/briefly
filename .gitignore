@@ -1,0 +1,28 @@
+# Development files
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+
+# Package files
+*.zip
+*.crx
+*.pem
+
+# Environment files
+.env
+.env.local
+
+# API Keys (backup - keys should only be in Chrome storage)
+api-keys.txt
+
+# Logs
+*.log
+npm-debug.log*
+
+# Browser artifacts
+.cache/
+
+# OS files
+Thumbs.db
+Desktop.ini

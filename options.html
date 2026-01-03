@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Summarizer - Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #718096;
+            margin-bottom: 32px;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2d3748;
+        }
+
+        .info-box {
+            background: #edf2f7;
+            border-left: 4px solid #667eea;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        .info-box strong {
+            color: #2d3748;
+        }
+
+        .info-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: monospace;
+            transition: all 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .status {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 16px;
+            display: none;
+        }
+
+        .status.visible {
+            display: block;
+        }
+
+        .status.success {
+            background: #c6f6d5;
+            color: #22543d;
+            border-left: 4px solid #38a169;
+        }
+
+        .status.error {
+            background: #fed7d7;
+            color: #742a2a;
+            border-left: 4px solid #f56565;
+        }
+
+        .feature-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            font-size: 13px;
+            color: #718096;
+            line-height: 2;
+        }
+
+        .feature-card li::before {
+            content: "✓ ";
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>⚙️ Article Summarizer Options</h1>
+        <p class="subtitle">Configure your summarization preferences</p>
+
+        <div class="section">
+            <h2 class="section-title">🚀 Groq API <span class="badge">FASTEST</span></h2>
+
+            <div class="info-box">
+                <strong>⚡ Lightning-fast summaries with Groq</strong><br>
+                Groq provides the fastest AI inference available. Get summaries in under 2 seconds!
+                <ol style="margin-top: 8px; margin-left: 20px;">
+                    <li>Get a free API key from <a href="https://console.groq.com/keys" target="_blank">Groq Console</a>
+                    </li>
+                    <li>Paste it below and click Save</li>
+                    <li>Enjoy instant summaries!</li>
+                </ol>
+                <br>
+                <strong>Note:</strong> If Groq is configured, it will be tried first. If it fails or is not configured,
+                Gemini will be used as fallback.
+            </div>
+
+            <label for="groqApiKey">Groq API Key (Optional):</label>
+            <input type="password" id="groqApiKey" placeholder="Enter your Groq API key here..." autocomplete="off">
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🤖 Gemini API <span class="badge">FALLBACK</span></h2>
+
+            <div class="info-box">
+                <strong>🤖 Reliable AI summaries with Gemini</strong><br>
+                Gemini provides high-quality summaries with Google's latest AI technology.
+                <ol style="margin-top: 8px; margin-left: 20px;">
+                    <li>Get a free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google
+                            AI Studio</a></li>
+                    <li>Paste it below and click Save</li>
+                    <li>Get AI-powered summaries!</li>
+                </ol>
+                <br>
+                <strong>Recommendation:</strong> Configure both Groq (for speed) and Gemini (for reliability).
+            </div>
+
+            <label for="apiKey">Gemini API Key (Optional):</label>
+            <input type="password" id="apiKey" placeholder="Enter your Gemini API key here..." autocomplete="off">
+
+            <div class="button-group">
+                <button class="btn-primary" id="saveBtn">💾 Save Settings</button>
+                <button class="btn-secondary" id="clearBtn">🗑️ Clear Keys</button>
+            </div>
+
+            <div class="status" id="status"></div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Summarization Comparison</h2>
+            <div class="feature-comparison">
+                <div class="feature-card">
+                    <h3>🚀 Groq (Primary)</h3>
+                    <ul>
+                        <li>Ultra-fast (1-2s)</li>
+                        <li>High quality</li>
+                        <li>Free tier available</li>
+                        <li>Requires API key</li>
+                        <li>Best for speed</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Gemini (Fallback)</h3>
+                    <ul>
+                        <li>Very reliable</li>
+                        <li>Good quality</li>
+                        <li>Free tier available</li>
+                        <li>Requires API key</li>
+                        <li>Best for reliability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Privacy & Security</h2>
+            <div class="info-box">
+                🔒 Your API keys are stored locally in your browser using Chrome's sync storage. They're never sent to
+                any
+                third party except Groq/Gemini APIs when generating summaries. Article content is only sent to
+                these APIs if you have configured their respective keys.
+            </div>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
