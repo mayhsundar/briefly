@@ -213,7 +213,20 @@ FORMAT:
         });
 
         if (!response.ok) {
-            throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+            const errorText = await response.text();
+            let errorMessage = `Gemini API error: ${response.status}`;
+            try {
+                const errorData = JSON.parse(errorText);
+                if (errorData.error?.message) {
+                    errorMessage += ` - ${errorData.error.message}`;
+                }
+            } catch (e) {
+                // If not JSON, use the raw text
+                if (errorText) {
+                    errorMessage += ` - ${errorText.substring(0, 200)}`;
+                }
+            }
+            throw new Error(errorMessage);
         }
 
         const data = await response.json();
